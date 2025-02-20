@@ -139,6 +139,9 @@ connection.setPaintStyle({
 </html>
 ```
 
+### 效果
+![alt text](image.png)
+
 ## 注意事项
 
 1. **虚线格式**：
