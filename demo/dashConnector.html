@@ -1,0 +1,44 @@
+<head>
+  <style>
+      .diagram-container {
+          width: 800px;
+          height: 600px;
+          border: 1px solid #ccc;
+      }
+      .element {
+          width: 80px;
+          height: 80px;
+          border: 1px solid #999;
+          position: absolute;
+      }
+  </style>
+</head>
+<body>
+  <div id="diagramContainer" class="diagram-container">
+      <div id="element1" class="element" style="left:100px; top:100px;">元素1</div>
+      <div id="element2" class="element" style="left:300px; top:300px;">元素2</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.min.js"></script>
+  <script>
+      jsPlumb.ready(function() {
+          const instance = jsPlumb.getInstance({
+              Container: "diagramContainer"
+          });
+
+          instance.connect({
+              source: "element1",
+              target: "element2",
+              anchor: ["Center", "Center"],
+              connector: ["Flowchart"],
+              paintStyle: {
+                  stroke: "#456",
+                  strokeWidth: 2,
+                  dashstyle: "4 2"
+              },
+              endpoint: "Dot"
+          });
+      });
+  </script>
+</body>
+</html>
